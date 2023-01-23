@@ -1,0 +1,23 @@
+A Bezier curve is defined by a set of control points and the position of the curve at a given parameter value t is given by the following equation:
+P(t) = (1-t)^3 * P1 + 3*(1-t)^2 * t * P2 + 3*(1-t) * t^2 * P3 + t^3 * P4
+
+Given the control points P1(20,0), P2(0,20), P3(80,40), P4(40,0), we can compute the coordinates of the points on the curve for t = 0.0, 0.2, 0.6, and 1.0
+
+For t = 0.0:
+P(0.0) = (1-0.0)^3 * P1 + 3*(1-0.0)^2 * 0.0 * P2 + 3*(1-0.0) * 0.0^2 * P3 + 0.0^3 * P4
+P(0.0) = P1 = (20,0)
+
+For t = 0.2:
+P(0.2) = (1-0.2)^3 * P1 + 3*(1-0.2)^2 * 0.2 * P2 + 3*(1-0.2) * 0.2^2 * P3 + 0.2^3 * P4
+P(0.2) = (0.512, 4.608)
+
+For t = 0.6:
+P(0.6) = (1-0.6)^3 * P1 + 3*(1-0.6)^2 * 0.6 * P2 + 3*(1-0.6) * 0.6^2 * P3 + 0.6^3 * P4
+P(0.6) = (43.104, 27.648)
+
+For t = 1.0:
+P(1.0) = (1-1.0)^3 * P1 + 3*(1-1.0)^2 * 1.0 * P2 + 3*(1-1.0) * 1.0^2 * P3 + 1.0^3 * P4
+P(1.0) = P4 = (40,0)
+
+So the coordinates of the points on the Bezier curve for t = 0.0, 0.2, 0.6, 1.0 are (20,0), (0.512, 4.608), (43.104, 27.648) and (40,0) respectively.
+It's worth mentioning that the Bezier curve is a smooth curve that can have different shapes, depending on the position of the control points.
