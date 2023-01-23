@@ -1,0 +1,27 @@
+To find the matrix for window to viewport transformation, we need to calculate the scale factors and the translation factors for both the x and y axes.
+
+Given:
+
+Window: lower left corner at (2, 2) and upper right corner at (5, 5)
+Viewport: lower left corner at (0.5, 0) and upper right corner at (1, 0.5)
+To find the transformation, we first need to calculate the width and height of the window and viewport:
+
+Window width = 5 - 2 = 3
+Window height = 5 - 2 = 3
+Viewport width = 1 - 0.5 = 0.5
+Viewport height = 0.5 - 0 = 0.5
+Next, we need to calculate the scale factors for the x and y axes:
+
+Scale factor for x axis = Viewport width / Window width = 0.5 / 3 = 0.16666
+Scale factor for y axis = Viewport height / Window height = 0.5 / 3 = 0.16666
+Finally, we need to calculate the translation factors for the x and y axes:
+
+Translation factor for x axis = Viewport lower left x - (Window lower left x * Scale factor for x) = 0.5 - (2 * 0.16666) = 0.33333
+Translation factor for y axis = Viewport lower left y - (Window lower left y * Scale factor for y) = 0 - (2 * 0.16666) = -0.33333
+Therefore, the window to viewport transformation matrix T is given by:
+
+T = [0.16666 0 0.33333]
+[0.16666 0 -0.33333]
+[0 0 1 ]
+
+This matrix can be used to transform the coordinates of the window to the coordinates of the viewport by matrix multiplication. Given the points of the rectangle ABCD, we can multiply the matrix T with the points' vectors to get the points in the new viewport.

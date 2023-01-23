@@ -1,0 +1,25 @@
+The normalization transformation N is used to map the coordinates of a window to the coordinates of a viewport. To find the normalization transformation for the given window and viewport, we need to calculate the scale factors and the translation factors for both the x and y axes.
+
+Given:
+
+Window: lower left corner at (1, 1) and upper right corner at (2, 6)
+Viewport: normalized device screen coordinates of [(0, 0) to (1, 1)]
+To find the transformation, we first need to calculate the width and height of the window and viewport:
+
+Window width = 2 - 1 = 1
+Window height = 6 - 1 = 5
+Viewport width = 1 - 0 = 1
+Viewport height = 1 - 0 = 1
+Next, we need to calculate the scale factors for the x and y axes:
+
+Scale factor for x axis = Viewport width / Window width = 1 / 1 = 1
+Scale factor for y axis = Viewport height / Window height = 1 / 5 = 0.2
+Finally, we need to calculate the translation factors for the x and y axes:
+
+Translation factor for x axis = Viewport lower left x - (Window lower left x * Scale factor for x) = 0 - (1 * 1) = -1
+Translation factor for y axis = Viewport lower left y - (Window lower left y * Scale factor for y) = 0 - (1 * 0.2) = -0.2
+Therefore, the normalization transformation N is given by:
+
+N = [1 0 -1]
+[0 0.2 -0.2]
+[0 0 1]
